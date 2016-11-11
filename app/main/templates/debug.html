@@ -1,10 +1,35 @@
 <ion-view view-title="main debug">
   <!-- do you want padding? -->
-  <ion-content class="padding">
+  <ion-content class="padding" style="background-color:#E1EDEE!important">
 
     <!-- content goes here -->
-    <ion-list>
-
+    <ion-list style="background-color:#E1EDEE!important">
+      <div class="card" style="border-radius:10px;background-color:rgba(181, 117, 117, .2)">
+          <div class="item item-divider" style="background-color:rgba(181, 117, 117, .05)">
+              <h5 ng-click="detailHeartRateFullscreen=!detailHeartRateFullscreen" style="margin-left:auto;margin-right:auto">Heart Rate</h5>
+          </div>
+          <div class="item item-text-wrap" style="background:none">
+          <div style="height:150px" area-chart area-data='test.heart_rate' area-xkey='timestamp' area-ykeys='["heart_rate"]' area-labels='["Heart Rate"]' area-resize='true' pointsize=0 area-goals='goals' goalStrokeWidth='10' fillOpacity='0.8' smooth='true' line-colors='["#522C2C"]'
+              hidehover="auto">
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border-radius:10px;background-color:rgba(181, 146, 117, .3)">
+        <div class="item item-divider" style="background-color:rgba(181, 146, 117, .05)">
+            <h5 ng-click="detailHeartRateFullscreen=!detailHeartRateFullscreen" style="margin-left:auto;margin-right:auto">Heart Rate</h5>
+        </div>
+          <div style="height:150px" area-chart area-data='test.path' area-xkey='timestamp' area-ykeys='["altitude"]' area-labels='["altitude"]' area-resize='true' pointsize=0 goalStrokeWidth='10' fillOpacity='0.5' smooth='true' line-colors='["#634A35"]' ymin='1400'
+              parseTime='false' xlabelformat='blank' hidehover="auto">
+          </div>
+</div>
+<div class="card" style="border-radius:10px;background-color:rgba(94, 145, 94, .3)">
+  <div class="item item-divider" style="background-color:rgba(94, 145, 94, .05)">
+      <h5 ng-click="detailHeartRateFullscreen=!detailHeartRateFullscreen" style="margin-left:auto;margin-right:auto">Heart Rate</h5>
+  </div>
+  <div style="height:150px" area-chart area-data='test.distance' area-xkey='timestamp' area-ykeys='["pace"]' area-labels='["altitude"]' area-resize='true' pointsize=0 goalStrokeWidth='10' fillOpacity='0.5' smooth='true' line-colors='["#15512E"]'
+      parseTime='false' xlabelformat='blank' hidehover="auto">
+  </div>
+</div>
       <ion-item class="item item-divider">
         Some basic checks
       </ion-item>

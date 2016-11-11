@@ -1,9 +1,9 @@
 'use strict';
 angular.module('main')
-.controller('DebugCtrl', function ($log, $http, $timeout, Main, Config, $cordovaDevice) {
+.controller('DebugCtrl', function ($scope, $log, $http, $timeout, Main, Config, $cordovaDevice, Running) {
 
   $log.log('Hello from your Controller: DebugCtrl in module main:. This is your controller:', this);
-
+  Running.getSpecificRuns([2365]).then(function(data) {$scope.test = data[0]; console.log($scope.test)});
   // bind data from services
   this.someData = Main.someData;
   this.ENV = Config.ENV;
